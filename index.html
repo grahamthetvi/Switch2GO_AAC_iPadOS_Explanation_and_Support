@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch2Go | Accessible AAC for CVI</title>
+    <meta name="description" content="An accessible AAC application designed to support students with Cerebral Visual Impairment (CVI). Now available on Android and iOS.">
+    
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blob-bg"></div>
+
+    <nav class="navbar glass">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">💬</span>
+                Switch2Go
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#support" class="nav-link">Support</a></li>
+                <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
+                <li><a href="#support" class="btn btn-primary">Get in Touch</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text fade-in-up">
+                    <div class="badges">
+                        <span class="badge badge-android">Android</span>
+                        <span class="badge badge-ios">iOS</span>
+                    </div>
+                    <h1 class="hero-title">Accessible AAC for <span class="text-gradient">CVI</span></h1>
+                    <p class="hero-subtitle">
+                        An augmentative and alternative communication app specifically designed to support students with Cerebral Visual Impairment. Features high-contrast layouts, reduced visual complexity, and multimodal inputs including eye-tracking.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="mailto:grahamthetvi@icloud.com" class="btn btn-primary btn-lg">Contact Support</a>
+                        <a href="#features" class="btn btn-secondary btn-lg">Explore Features</a>
+                    </div>
+                </div>
+                <!-- Abstract Representation / Glass Card -->
+                <div class="hero-visual fade-in-up delay-1">
+                    <div class="glass-card visual-card">
+                        <div class="mock-ui">
+                            <div class="mock-header">
+                                <div class="mock-dot red"></div>
+                                <div class="mock-dot yellow"></div>
+                                <div class="mock-dot green"></div>
+                            </div>
+                            <div class="mock-grid">
+                                <div class="mock-tile tile-red">Yes</div>
+                                <div class="mock-tile tile-blue">No</div>
+                                <div class="mock-tile tile-yellow">More</div>
+                                <div class="mock-tile tile-green">Done</div>
+                            </div>
+                        </div>
+                        <div class="floating-badge badge-1">Eye-Tracking</div>
+                        <div class="floating-badge badge-2">High-Contrast</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features section">
+            <div class="container">
+                <div class="section-header text-center fade-in-up">
+                    <h2>Designed for Independence</h2>
+                    <p>Switch2Go makes communication accessible with customizable features tailored for unique visual and physical needs.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card glass-card fade-in-up">
+                        <div class="feature-icon">👁️</div>
+                        <h3>CVI-Optimized Interface</h3>
+                        <p>Configure layouts with 2-4 symbols per page to reduce visual complexity. Customize high-contrast colors and text sizes to accommodate specific visual needs.</p>
+                    </div>
+
+                    <div class="feature-card glass-card fade-in-up delay-1">
+                        <div class="feature-icon">✨</div>
+                        <h3>Multimodal User Interface</h3>
+                        <p>Uses ARCore to track head movements and eye gaze technology, enabling completely hands-free operation. Users can navigate and select items simply by lingering their gaze.</p>
+                    </div>
+
+                    <div class="feature-card glass-card fade-in-up delay-2">
+                        <div class="feature-icon">💬</div>
+                        <h3>Saved Phrases</h3>
+                        <p>Access a curated list of common phrases or create entirely custom ones with personalized appearance settings for quick communication in daily routines.</p>
+                    </div>
+
+                    <div class="feature-card glass-card fade-in-up">
+                        <div class="feature-icon">🔌</div>
+                        <h3>(Upcoming) Switch Control</h3>
+                        <p>Support for Arduino-based USB switch controls, mapping physical switch presses directly to customized phrase tiles without complex bluetooth pairing.</p>
+                    </div>
+                    
+                    <div class="feature-card glass-card fade-in-up delay-1">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>100% Private</h3>
+                        <p>All face tracking, eye tracking, and voice processing happens completely locally on your device. Zero data collection, absolute privacy.</p>
+                    </div>
+                    
+                    <div class="feature-card glass-card fade-in-up delay-2">
+                        <div class="feature-icon">📱</div>
+                        <h3>Cross-Platform</h3>
+                        <p>Available on both Android and iOS with 100% feature parity. Built with a modern Kotlin Multiplatform architecture.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="support" class="support section">
+            <div class="container container-sm">
+                <div class="support-card glass-card fade-in-up">
+                    <div class="support-content text-center">
+                        <h2>Need Assistance?</h2>
+                        <p>We're here to help parents, educators, and users get the most out of Switch2Go. If you have any questions, encounter issues, or simply want to learn more about setting up the app, please reach out.</p>
+                        <div class="contact-info">
+                            <strong>Addison Graham</strong><br>
+                            Teacher of the Visually Impaired
+                        </div>
+                        <a href="mailto:grahamthetvi@icloud.com" class="btn btn-primary btn-lg mt-4">
+                            Email grahamthetvi@icloud.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="logo">💬 Switch2Go</span>
+                <p>An accessible AAC application based on Vocable AAC, adapted to support students with Cerebral Visual Impairment.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p>&copy; 2026 Switch2Go. Released under the MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
