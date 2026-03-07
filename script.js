@@ -171,6 +171,25 @@ function applyOutlineToBlob(cutoutBlob, outlineColor, outlineThickness) {
     });
 }
 
+function resolveBackgroundRemovalFunction(moduleNamespace) {
+    const candidates = [
+        moduleNamespace?.default,
+        moduleNamespace?.removeBackground,
+        moduleNamespace?.default?.removeBackground,
+        moduleNamespace?.default?.default
+    ];
+
+    const resolved = candidates.find(candidate => typeof candidate === 'function');
+    if (resolved) {
+        return resolved;
+    }
+
+    const exportedKeys = Object.keys(moduleNamespace || {});
+    throw new Error(
+        `Could not find a compatible remover export (found: ${exportedKeys.join(', ') || 'none'})`
+    );
+}
+
 function initializeImageTool() {
     const localInput = document.getElementById('local-image-input');
     const wikiQueryInput = document.getElementById('wikimedia-query');
@@ -316,7 +335,7 @@ function initializeImageTool() {
             if (!backgroundRemovalFn) {
                 statusText.textContent = 'Loading background removal model (first run can take longer)...';
                 const module = await import('https://cdn.jsdelivr.net/npm/@imgly/background-removal/+esm');
-                backgroundRemovalFn = module.default;
+                backgroundRemovalFn = resolveBackgroundRemovalFunction(module);
             }
 
             statusText.textContent = `Removing background from: ${selectedImageLabel}`;
