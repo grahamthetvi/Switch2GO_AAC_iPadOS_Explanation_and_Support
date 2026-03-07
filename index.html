@@ -169,14 +169,24 @@
                             <div id="wikimedia-results" class="wikimedia-results" aria-live="polite"></div>
 
                             <div class="form-group outline-toggle-row">
-                                <input id="outline-enabled" type="checkbox">
+                                <input id="outline-enabled" type="checkbox" checked>
                                 <label for="outline-enabled">Add object outline</label>
                             </div>
 
                             <div class="outline-controls">
                                 <div class="form-group">
                                     <label for="outline-color">Outline color</label>
-                                    <input id="outline-color" type="color" value="#f59e0b">
+                                    <select id="outline-color" aria-label="Outline color">
+                                        <option value="#000000">Black</option>
+                                        <option value="#ffffff">White</option>
+                                        <option value="#ef4444">Red</option>
+                                        <option value="#f59e0b" selected>Orange</option>
+                                        <option value="#eab308">Yellow</option>
+                                        <option value="#22c55e">Green</option>
+                                        <option value="#3b82f6">Blue</option>
+                                        <option value="#8b5cf6">Purple</option>
+                                        <option value="#ec4899">Pink</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="outline-thickness">Outline thickness (px)</label>

@@ -491,7 +491,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .form-group input[type="text"],
-.form-group input[type="file"] {
+.form-group input[type="file"],
+.form-group select {
     width: 100%;
     background: rgba(255, 255, 255, 0.06);
     color: var(--text-primary);
@@ -564,17 +565,13 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1rem;
 }
 
-.outline-controls input[type="color"] {
-    width: 100%;
-    min-height: 40px;
-    border: 1px solid var(--glass-border);
-    border-radius: 8px;
-    background: transparent;
-    padding: 0.2rem;
-}
-
 .outline-controls input[type="range"] {
     width: 100%;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: auto;
 }
 
 #outline-thickness-value {
