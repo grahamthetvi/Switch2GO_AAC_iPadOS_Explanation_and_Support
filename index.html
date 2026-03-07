@@ -25,6 +25,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#image-tool" class="nav-link">Image Tool</a></li>
                 <li><a href="#support" class="nav-link">Support</a></li>
                 <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
                 <li><a href="#support" class="btn btn-primary">Get in Touch</a></li>
@@ -137,6 +138,74 @@
                         <a href="mailto:grahamthetvi@icloud.com" class="btn btn-primary btn-lg mt-4">
                             Email grahamthetvi@icloud.com
                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="image-tool" class="section image-tool">
+            <div class="container">
+                <div class="section-header text-center fade-in-up">
+                    <h2>Image Isolation Tool</h2>
+                    <p>Upload your own photo or pull one from Wikimedia Commons, then remove the background and optionally add a high-contrast outline.</p>
+                </div>
+
+                <div class="glass-card image-tool-card fade-in-up delay-1">
+                    <div class="image-tool-grid">
+                        <div class="tool-controls">
+                            <div class="form-group">
+                                <label for="local-image-input">Upload a picture</label>
+                                <input id="local-image-input" type="file" accept="image/*">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="wikimedia-query">Find an image from Wikimedia Commons</label>
+                                <div class="wikimedia-search-row">
+                                    <input id="wikimedia-query" type="text" placeholder="e.g., red apple on table">
+                                    <button id="wikimedia-search-btn" class="btn btn-secondary" type="button">Search</button>
+                                </div>
+                            </div>
+
+                            <div id="wikimedia-results" class="wikimedia-results" aria-live="polite"></div>
+
+                            <div class="form-group outline-toggle-row">
+                                <input id="outline-enabled" type="checkbox">
+                                <label for="outline-enabled">Add object outline</label>
+                            </div>
+
+                            <div class="outline-controls">
+                                <div class="form-group">
+                                    <label for="outline-color">Outline color</label>
+                                    <input id="outline-color" type="color" value="#f59e0b">
+                                </div>
+                                <div class="form-group">
+                                    <label for="outline-thickness">Outline thickness (px)</label>
+                                    <input id="outline-thickness" type="range" min="1" max="24" value="6">
+                                    <span id="outline-thickness-value">6px</span>
+                                </div>
+                            </div>
+
+                            <div class="tool-actions">
+                                <button id="process-image-btn" class="btn btn-primary" type="button">Remove Background</button>
+                                <a id="download-processed-btn" class="btn btn-secondary disabled" href="#" download="isolated-object.png" aria-disabled="true">Download Result</a>
+                            </div>
+
+                            <p id="image-tool-status" class="tool-status">Choose an image to begin.</p>
+                        </div>
+
+                        <div class="tool-preview">
+                            <div class="preview-panel">
+                                <h3>Source Image</h3>
+                                <img id="source-preview" alt="Selected source preview">
+                                <p id="source-placeholder" class="preview-placeholder">No source image selected yet.</p>
+                            </div>
+
+                            <div class="preview-panel">
+                                <h3>Processed Result</h3>
+                                <img id="processed-preview" alt="Processed image preview">
+                                <p id="processed-placeholder" class="preview-placeholder">Processed image will appear here.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
