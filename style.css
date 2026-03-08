@@ -633,6 +633,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Privacy Policy Content Formatting */
+/* Policy content visible by default - avoids IntersectionObserver issues in small popups (e.g. App Store) */
+.page-privacy .policy-card.fade-in-up {
+    opacity: 1;
+    transform: none;
+}
+
 .policy-card {
     margin-bottom: 4rem;
 }
