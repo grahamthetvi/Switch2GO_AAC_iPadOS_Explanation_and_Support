@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js');
+
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const menuBtn = document.querySelector('.mobile-menu-btn');
@@ -21,16 +23,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Close mobile menu when a link is clicked
-    const links = document.querySelectorAll('.nav-link');
-    links.forEach(link => {
+    const closeMobileMenu = () => {
+        if (!navLinks.classList.contains('active')) {
+            return;
+        }
+        navLinks.classList.remove('active');
+        const spans = menuBtn.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+    };
+
+    // Close mobile menu when any nav item is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                const spans = menuBtn.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
+            if (window.innerWidth <= 768) {
+                closeMobileMenu();
             }
         });
     });
@@ -265,7 +273,7 @@ function initializeImageTool() {
         outlineThicknessValue.textContent = `${outlineThicknessInput.value}px`;
     });
 
-    wikiSearchButton.addEventListener('click', async () => {
+    const runWikimediaSearch = async () => {
         const query = wikiQueryInput.value.trim();
         if (!query) {
             statusText.textContent = 'Enter a Wikimedia search term first.';
@@ -318,6 +326,14 @@ function initializeImageTool() {
                 : 'No usable image results returned from Wikimedia.';
         } catch (error) {
             statusText.textContent = `Wikimedia search failed: ${error.message}`;
+        }
+    };
+
+    wikiSearchButton.addEventListener('click', runWikimediaSearch);
+    wikiQueryInput.addEventListener('keydown', event => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            runWikimediaSearch();
         }
     });
 

@@ -718,9 +718,60 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
     gap: 4rem;
     margin-bottom: 3rem;
+}
+
+.feature-card a {
+    color: var(--accent-secondary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.feature-card a:hover {
+    color: #7dd3fc;
+}
+
+/* Web demo embed */
+.web-demo-card {
+    padding: 1.5rem;
+}
+
+.web-demo-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.web-demo-note {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.web-demo-frame-wrap {
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--bg-secondary);
+    min-height: min(80vh, 900px);
+}
+
+.web-demo-frame {
+    display: block;
+    width: 100%;
+    height: min(80vh, 900px);
+    border: 0;
+}
+
+.support-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 1.5rem;
 }
 
 .footer-brand p {
@@ -755,20 +806,53 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.9rem;
 }
 
-/* Animations */
-.fade-in-up {
+/* Utility */
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+/* Animations — only hide content when JS will reveal it */
+.js .fade-in-up {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.fade-in-up.visible {
+.js .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Above-the-fold hero: visible immediately (no flash of blank content) */
+.js .hero .fade-in-up {
     opacity: 1;
     transform: translateY(0);
 }
 
 .delay-1 { transition-delay: 0.2s; }
 .delay-2 { transition-delay: 0.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .js .fade-in-up,
+    .js .fade-in-up.visible,
+    .js .hero .fade-in-up {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .blob-bg {
+        animation: none;
+    }
+
+    .floating-badge {
+        animation: none;
+    }
+}
 
 /* Responsive Design */
 @media (max-width: 900px) {
